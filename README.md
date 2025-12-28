@@ -1,5 +1,5 @@
-### Docker Case
-### Proje
+# Docker Case
+
 ### Görev 1
 Basit bir Node.js uygulamasının Docker ile containerize edilmesi
 
@@ -7,8 +7,6 @@ Basit bir Node.js uygulamasının Docker ile containerize edilmesi
 -Docker
 -Node.js
 -Express
-
-#Kurulum ve Çalıştırma
 
 
 ### 1) Dockerfile Yazıldı
@@ -50,9 +48,57 @@ docker ps
 ```
 ### 4) Port Eşleşmesi(Uygulama tarafı)
 Container içindeki uygulama, tanımlanan  portu dinliyor mu kontrol edilir
+`
 app.listen(3000, () =>
   {
-    console.log("App runnig on port 3000")
+    console.log("App running on port 3000")
   }
 )
+`
+## Görev 3
+### Container içerisindeki uygulama loglarına nasıl bakılır?
 
+### 1) docker logs
+
+Bu komut kullanılarak bir Docker containerinin logları alınabilir.
+```
+docker logs <container-name>
+```
+### 2) docker logs -f devops-container
+Container loglarını canlı izlemek için kullanılabilir
+
+```
+ docker logs <container-name> -f
+```
+### Host makinede disk doluluğunu kontrol etmek için
+
+```
+df -h
+```
+Disklerin doluluk oranı % olarak bu komut sayesinde görüntülenebilir
+
+## Görev 4
+
+### Aşağıdaki pipeline sırasını doğru buluyor musun? Doğru değilse neden?
+Deploy -> Build -> Test
+*Doğru depil çünkü build edilmemiş birşey deploy edilemez ayrıca test edilmemiş bir uygulamanın production a alınması hatalı bir kodun canlı ortama gitmesi açısından risklidir.
+
+Doğru pipeline sıralaması;
+
+* Build -> Test -> Deploy
+
+Build de uygulama derlenir ve docker image oluşturulur, test de uygulamanın doğru çalışıp çalışmadığı test edilir, deploy da ise testleri geçen uygulama production a alınır.
+
+## Görev 5 (Güvenlik)
+
+### Bu uygulamayı root user olarak çalıştırmak neden riklidir ve ne yapılabilir?
+
+* Uygulamada gğvenlik açığı varsa saldırgan container içerisinde root yetkisini alabilir
+* Yanlış oluşturukmuş bir container host kaynaklarına erişebilir
+Ne yapılabilir?
+
+* Root kullanıcı ile sadece paket kurulumları yapılabilir ve uygulama çalışırken root olmayan kullanıcı ile çalıştırılabilir. Bu sayede daha güvenli bir ortam oluşmuş olur
+
+Görev 6 (Bonus)
+## Bu uygulamayı prodction a alacak olsak ne eklerdin?
+Port ve  ortam bilgilerini kod içerisine değil .env ye koyardım.
