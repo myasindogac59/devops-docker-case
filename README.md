@@ -91,10 +91,10 @@ Build de uygulama derlenir ve docker image oluşturulur, test de uygulamanın do
 
 ## Görev 5 (Güvenlik)
 
-### Bu uygulamayı root user olarak çalıştırmak neden riklidir ve ne yapılabilir?
+### Bu uygulamayı root user olarak çalıştırmak neden risklidir ve ne yapılabilir?
 
-* Uygulamada gğvenlik açığı varsa saldırgan container içerisinde root yetkisini alabilir
-* Yanlış oluşturukmuş bir container host kaynaklarına erişebilir
+* Uygulamada güvenlik açığı varsa saldırgan container içerisinde root yetkisini alabilir
+* Yanlış oluşturulmuş bir container host kaynaklarına erişebilir
 Ne yapılabilir?
 
 * Root kullanıcı ile sadece paket kurulumları yapılabilir ve uygulama çalışırken root olmayan kullanıcı ile çalıştırılabilir. Bu sayede daha güvenli bir ortam oluşmuş olur
