@@ -43,7 +43,7 @@ docker ps
 ### 3) Container Durumu
 Aşağıdaki komut girildiğinde up durumda mı yoksa exited durumda mı kontrol edilir
 ```
-docker ps -a
+docker ps
 ```
 ### 4) Port Eşleşmesi(Uygulama tarafı)
 Container içindeki uygulama, tanımlanan  portu dinliyor mu kontrol edilir
