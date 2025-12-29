@@ -31,7 +31,6 @@ Container çalışıyor ama uygulamaya erişilemiyorsa;
 * Server ayağa kalkmış mı?
 * Hata var mı?
 * Port dinleniyor mu?
-* 
 ```
 docker logs myCase
 ```
@@ -44,7 +43,7 @@ docker ps
 ### 3) Container Durumu
 Aşağıdaki komut girildiğinde up durumda mı yoksa exited durumda mı kontrol edilir
 ```
-docker ps
+docker ps -a
 ```
 ### 4) Port Eşleşmesi(Uygulama tarafı)
 Container içindeki uygulama, tanımlanan  portu dinliyor mu kontrol edilir
